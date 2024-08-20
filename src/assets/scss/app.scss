@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "fonts.scss";
+@import "base";
+@import "./animations.scss";
+
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.load {
+  @apply relative overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.11)];
+
+  &::after {
+    @apply absolute block h-full w-full translate-x-[-100%] transform content-[""];
+    background: linear-gradient(90deg, transparent, rgba(#fff, 0.75), transparent);
+    animation: loading 1.5s infinite;
+  }
+}

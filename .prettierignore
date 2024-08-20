@@ -1,0 +1,7 @@
+# Ignore artifacts:
+coverage
+node_modules
+dist
+.git
+.idea
+.vscode/*
